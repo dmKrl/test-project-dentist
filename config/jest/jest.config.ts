@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from "jest";
+import type { Config } from 'jest';
 
 const config: Config = {
     // All imported modules in your tests should be mocked automatically
@@ -17,24 +17,24 @@ const config: Config = {
 
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
-    testPathIgnorePatterns: ["\\\\node_modules\\\\"],
-    testEnvironment: "jsdom",
-    moduleDirectories: ["node_modules", "src"],
+    testPathIgnorePatterns: ['\\\\node_modules\\\\'],
+    testEnvironment: 'jsdom',
+    moduleDirectories: ['node_modules', 'src'],
     moduleNameMapper: {
-        "\\.(css|scss)$": "identity-obj-proxy",
-        "\\.svg": "<rootDir>/config/jest/jestEmptyComponent.tsx",
-        "@app/(.*)": "<rootDir>/src/app/$1",
-        "@shared/(.*)": "<rootDir>/src/shared/$1",
-        "@pages/(.*)": "<rootDir>/src/pages/$1",
-        "@widgets/(.*)": "<rootDir>/src/widgets/$1",
+        '\\.(css|scss)$': 'identity-obj-proxy',
+        '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
+        '@app/(.*)': '<rootDir>/src/app/$1',
+        '@shared/(.*)': '<rootDir>/src/shared/$1',
+        '@pages/(.*)': '<rootDir>/src/pages/$1',
+        '@widgets/(.*)': '<rootDir>/src/widgets/$1',
     },
 
-    moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
-    rootDir: "../../",
-    modulePaths: ["<rootDir>src"],
-    testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
-    preset: "ts-jest",
-    setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+    rootDir: '../../',
+    modulePaths: ['<rootDir>src'],
+    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+    preset: 'ts-jest',
+    setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
