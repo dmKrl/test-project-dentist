@@ -1,3 +1,23 @@
 .sidebar {
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: var(--sidebar-width);
+    height: 100vh;
+    padding: 20px;
+    background-color: var(--primary-bg-color);
+    border-right: 1px solid var(--primary-stroke);
+    transition: width 0.2s ease;
+    font: var(--font-m);
+}
+
+.sidebarContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
 }

@@ -1,0 +1,31 @@
+:root {
+    --font-family-main: consolas, 'Times New Roman', serif;
+    --font-size-s: 14px;
+    --font-line-s: 20px;
+    --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+    --font-size-l: 24px;
+    --font-line-l: 32px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-xl: 32px;
+    --font-line-xl: 40px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+    --navbar-height: 104px;
+    --sidebar-width: 340px;
+    --sidebar-width-collapsed: 80px;
+    --modal-z-index: 10;
+
+    /* Colors */
+    --bg-color: #fff;
+    --primary-bg-color: #f4f6f9;
+    --primary-text-color: #222;
+    --secondary-text-color: #a3a3a3;
+    --primary-blue: #006bff;
+    --primary-light-blue: #e9f2ff;
+    --primary-stroke: #d4d9e4;
+    --primary-hover-bg: #e8ecf6;
+    --grayscale-black: #22222230;
+    --grayscale-white: #fff;
+}
