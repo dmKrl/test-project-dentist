@@ -22,5 +22,6 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true
     },
-    "include": ["src"]
+    "include": ["src"],
+    "setupFilesAfterEnv": ["<rootDir>/config/jest/setupTests.ts"]
 }
