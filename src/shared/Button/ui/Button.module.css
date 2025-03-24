@@ -1,7 +1,11 @@
 .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font: var(--font-s);
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 .clear {
@@ -12,9 +16,6 @@
 }
 
 .buttonSidebar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 8px;
     border: 1px solid var(--primary-stroke);
     background: var(--bg-color);

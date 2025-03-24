@@ -1,0 +1,26 @@
+.dropdownsStatus {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: var(--font-s);
+    border-radius: 8px;
+    background: var(--primary-hover-bg);
+    padding: 6px 12px;
+}
+
+.ellipsis {
+    font: var(--font-s);
+    color: var(--grayscale-grey);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,37 @@
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdownItem span {
+    max-width: 143px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.dropdownItemClose {
+    fill: var(--primary-blue);
+}
+
+.dropdownItemName {
+    border-radius: 8px;
+    background: var(--primary-hover-bg);
+    padding: 6px 12px;
+}
+
+.dropdownItemStatus {
+    border-radius: 8px;
+    background: var(--role-colors-light);
+    padding: 6px 12px;
+}
+
+.dropdownItemText {
+    font: var(--font-s);
+    color: var(--primary-text-color);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    text-overflow: ellipsis;
+}
