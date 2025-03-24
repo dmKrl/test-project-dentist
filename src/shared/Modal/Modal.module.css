@@ -5,6 +5,7 @@
     opacity: 0;
     transition: 0.2s opacity ease;
     pointer-events: none;
+    background-color: var(--modal-overlay);
 }
 
 .modal {
@@ -12,7 +13,6 @@
     height: 100%;
     border-radius: 32px;
     border: 1px solid var(--primary-stroke);
-    background: var(--bg-color);
     box-shadow: 0 0 11.3px 0 rgb(17 17 17 / 8%);
     display: flex;
     justify-content: center;

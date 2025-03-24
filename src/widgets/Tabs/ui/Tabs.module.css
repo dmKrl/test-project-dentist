@@ -1,0 +1,16 @@
+.tabs {
+    display: flex;
+    border-radius: 12px;
+    background: var(--primary-bg-color);
+    padding: 4px;
+    max-width: 979px;
+}
+
+.activeRadio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-color);
+    color: var(--primary-color);
+}

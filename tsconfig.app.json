@@ -24,7 +24,8 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "useDefineForClassFields": true
     },
     "include": ["src"],
     "setupFilesAfterEnv": ["<rootDir>/config/jest/setupTests.ts"]
