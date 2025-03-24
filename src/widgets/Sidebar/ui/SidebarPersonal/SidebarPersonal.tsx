@@ -1,11 +1,11 @@
-import { AppLink, AppLinkTheme } from '../../../../shared/AppLink';
-import cls from './SidebarPersonal.module.css';
+import { FC } from 'react';
 import Calendar from '../../assets/personal/calendar.svg?react';
 import Organization from '../../assets/personal/organization.svg?react';
 import Ruble from '../../assets/personal/ruble.svg?react';
 import Structure from '../../assets/personal/structure.svg?react';
 import VvkRegister from '../../assets/personal/vvk-register.svg?react';
-import { FC } from 'react';
+import { AppLink, AppLinkTheme } from '@/shared/AppLink';
+import cls from './SidebarPersonal.module.css';
 
 interface SidebarPersonalProps {
     isCollapsed: boolean;

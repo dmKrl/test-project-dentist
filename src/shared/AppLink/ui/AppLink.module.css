@@ -5,6 +5,10 @@
     color: var(--primary-text-color);
 }
 
+.linkClear {
+    margin: 0;
+}
+
 .linkSidebar {
     display: flex;
     align-items: center;

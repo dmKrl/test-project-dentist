@@ -1,0 +1,32 @@
+.logoContainer {
+    display: flex;
+    gap: 16px;
+}
+
+.logoContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.logoContentHide {
+    display: none;
+}
+
+.logoTitle {
+    color: var(--primary-color);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 48px;
+}
+
+.logoNaming {
+    color: var(--primary-blue);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}

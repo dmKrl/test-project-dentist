@@ -1,6 +1,7 @@
+import { MainPage } from '@/pages/MainPage/ui/MainPage';
+import { NotFound } from '@/pages/NotFound/ui/NotFound';
 import { Suspense } from 'react';
 import { RouteObject } from 'react-router-dom';
-import { MainPage } from '../../../pages/MainPage/ui/MainPage';
 
 export const routeConfig: RouteObject[] = [
     {
@@ -15,7 +16,7 @@ export const routeConfig: RouteObject[] = [
         path: '*',
         element: (
             <Suspense fallback={<div>Loading...</div>}>
-                <MainPage />
+                <NotFound />
             </Suspense>
         ),
     },

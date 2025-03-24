@@ -1,5 +1,5 @@
 // interface MainPageProps {}
 
 export const MainPage = () => {
-    return <div>Some Text</div>;
+    return <section>Some Text</section>;
 };

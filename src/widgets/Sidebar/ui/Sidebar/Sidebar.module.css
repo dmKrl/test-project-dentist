@@ -10,14 +10,29 @@
     border-right: 1px solid var(--primary-stroke);
     transition: width 0.2s ease;
     font: var(--font-m);
+    position: relative;
 }
 
 .sidebarContent {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
+}
+
+.collapsedButton {
+    transition: 0.2s transform ease;
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
+    padding: 10px;
+    align-items: center;
+}
+
+.collapsed .collapsedButton {
+    transform: rotateY(180deg);
+}
+
+.collapsed .sidebarContent {
+    align-items: center;
 }

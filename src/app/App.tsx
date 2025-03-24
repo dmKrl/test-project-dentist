@@ -1,5 +1,5 @@
-import { Header } from '../widgets/Header';
-import { Sidebar } from '../widgets/Sidebar/ui/Sidebar/Sidebar';
+import { Header } from '@/widgets/Header';
+import { Sidebar } from '@/widgets/Sidebar';
 import { AppRouter } from './providers/RouterProvider/ui/AppRouter';
 
 function App() {
@@ -8,9 +8,9 @@ function App() {
             <Sidebar />
             <div className="content-page">
                 <Header />
-                <div className="page-wrapper">
+                <main className="page-wrapper">
                     <AppRouter />
-                </div>
+                </main>
             </div>
         </div>
     );

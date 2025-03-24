@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { AppLink, AppLinkTheme } from '../../../../shared/AppLink';
+import AboutIcon from '../../assets/workspace/about.svg?react';
+import ArrowsCollapsed from '../../assets/button/arrowsCollapsed.svg?react';
 import { SidebarPersonal } from '../SidebarPersonal/SidebarPersonal';
 import { SidebarWorkspace } from '../SidebarWorkspace/SidebarWorkspace';
-// import AboutIcon from '../../assets/workspace/about.svg';
-import { Button } from '../../../../shared/Button';
-import { ButtonTheme } from '../../../../shared/Button/types/ButtonTheme';
-import AboutIcon from '../../assets/workspace/about.svg?react';
-import cls from './Sidebar.module.css';
+import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
+import { AppLink, AppLinkTheme } from '@/shared/AppLink';
+import { Button } from '@/shared/Button';
 import classNames from 'classnames';
+import cls from './Sidebar.module.css';
+import { SidebarLogo } from '../SidebarLogo/SidebarLogo';
 
 export const Sidebar = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -21,11 +22,12 @@ export const Sidebar = () => {
     };
 
     return (
-        <div className={classNames(cls.sidebar, mods, [])}>
-            <div className={cls.sidebarContent}>
+        <section className={classNames(cls.sidebar, mods, [])}>
+            <nav className={cls.sidebarContent}>
+                <SidebarLogo isCollapsed={isCollapsed} />
                 <SidebarPersonal isCollapsed={isCollapsed} />
                 <SidebarWorkspace isCollapsed={isCollapsed} />
-            </div>
+            </nav>
             <AppLink to="/" linkTheme={AppLinkTheme.LINK_SIDEBAR}>
                 <AboutIcon />
                 {isCollapsed ? '' : <span>О сервисе</span>}
@@ -33,10 +35,11 @@ export const Sidebar = () => {
             <Button
                 type="button"
                 onClick={changeIsCollapsed}
-                buttonTheme={ButtonTheme.CLEAR}
+                buttonTheme={ButtonTheme.BUTTON_SIDEBAR}
+                className={cls.collapsedButton}
             >
-                {isCollapsed ? '>>' : '<<'}
+                <ArrowsCollapsed />
             </Button>
-        </div>
+        </section>
     );
 };
