@@ -12,5 +12,5 @@
     align-items: center;
     gap: 10px;
     background: var(--bg-color);
-    color: var(--primary-color);
+    color: var(--primary-text-color);
 }

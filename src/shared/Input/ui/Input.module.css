@@ -1,6 +1,6 @@
 .input {
     font: var(--font-s);
-    color: var(--primary-color);
+    color: var(--primary-text-color);
     text-align: center;
     font-feature-settings:
         'liga' off,

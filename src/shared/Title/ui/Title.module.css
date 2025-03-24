@@ -1,0 +1,15 @@
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 48px 0 32px;
+}
+
+.titleContainer h1 {
+    overflow: hidden;
+    font: var(--font-xl);
+    color: var(--grayscale-black);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    text-overflow: ellipsis;
+}

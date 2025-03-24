@@ -1,5 +1,7 @@
 .button {
     font: var(--font-s);
+    border: none;
+    background: none;
 }
 
 .clear {
@@ -21,4 +23,35 @@
     right: -20px;
     top: 82px;
     padding: 8px;
+}
+
+.buttonPrimary {
+    font: var(--font-s);
+    color: var(--grayscale-white);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    border-radius: 16px;
+    background: var(--primary-blue);
+    padding: 18px 24px;
+    transition: 0.2s background ease;
+}
+
+.buttonPrimary:hover {
+    background: var(--primary-blue-hover);
+}
+
+.buttonSecondary {
+    font: var(--font-s);
+    color: var(--primary-text-color);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    border-radius: 16px;
+    background: var(--primary-light-blue);
+    transition: 0.2s background ease;
+}
+
+.buttonSecondary:hover {
+    background: var(--primary-light-blue-hover);
 }

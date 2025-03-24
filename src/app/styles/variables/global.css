@@ -9,8 +9,8 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-    --font-size-xl: 32px;
-    --font-line-xl: 40px;
+    --font-size-xl: 36px;
+    --font-line-xl: 44px;
     --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
     --header-height: 104px;
     --sidebar-width: 340px;
@@ -23,10 +23,12 @@
     --primary-text-color: #222;
     --secondary-text-color: #a3a3a3;
     --primary-blue: #006bff;
+    --primary-blue-hover: #1161d1;
     --primary-light-blue: #e9f2ff;
+    --primary-light-blue-hover: #dbdfe4;
     --primary-stroke: #d4d9e4;
     --primary-hover-bg: #e8ecf6;
-    --grayscale-black: #22222230;
+    --grayscale-black: #222;
     --grayscale-white: #fff;
     --grayscale-grey: #a3a3a3;
     --role-colors-dark: #9600ae;

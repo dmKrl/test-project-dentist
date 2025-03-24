@@ -4,7 +4,7 @@
 .app {
     display: flex;
     min-height: 100vh;
-    color: var(--primary-color);
+    color: var(--primary-text-color);
     font: var(--font-m);
     font-size: 30px;
     background-color: var(--bg-color);
