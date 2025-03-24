@@ -3,7 +3,7 @@ import { FC, InputHTMLAttributes } from 'react';
 import cls from './Input.module.css';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    type: 'text' | 'button' | 'checkbox';
+    type: 'text' | 'button' | 'checkbox' | 'radio';
 }
 
 export const Input: FC<InputProps> = (props) => {

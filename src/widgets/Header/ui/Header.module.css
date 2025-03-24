@@ -1,3 +1,33 @@
 .header {
-    padding: 0;
+    display: flex;
+    width: 100%;
+    height: var(--header-height);
+    padding: 24px 20px 24px 40px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-stroke);
+    background: var(--grayscale-white);
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.userRole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--role-colors-light, #ffd5fb);
+    border-left: 1px solid var(--primary-bg-color);
+}
+
+.userRole span {
+    font: var(--font-s);
+    color: var(--role-colors-dark);
+    text-align: center;
 }
