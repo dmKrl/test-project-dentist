@@ -4,9 +4,10 @@ import { ButtonTheme } from '../types/ButtonTheme';
 import cls from './Button.module.css';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string;
     buttonTheme: ButtonTheme;
+    className?: string;
     type?: 'button' | 'submit';
+    disabled?: boolean;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -16,6 +17,7 @@ export const Button: FC<ButtonProps> = (props) => {
         children,
         buttonTheme,
         onClick,
+        disabled,
     } = props;
     return (
         <button
@@ -25,6 +27,7 @@ export const Button: FC<ButtonProps> = (props) => {
                 cls[buttonTheme],
             ])}
             onClick={onClick}
+            disabled={disabled}
         >
             {children}
         </button>

@@ -6,6 +6,8 @@
     border: none;
     background: none;
     cursor: pointer;
+    padding: 18px 24px;
+    border-radius: 16px;
 }
 
 .clear {
@@ -32,9 +34,7 @@
     font-feature-settings:
         'liga' off,
         'clig' off;
-    border-radius: 16px;
     background: var(--primary-blue);
-    padding: 18px 24px;
     transition: 0.2s background ease;
 }
 
@@ -48,11 +48,22 @@
     font-feature-settings:
         'liga' off,
         'clig' off;
-    border-radius: 16px;
     background: var(--primary-light-blue);
     transition: 0.2s background ease;
 }
 
 .buttonSecondary:hover {
     background: var(--primary-light-blue-hover);
+}
+
+.buttonDisabledPrimary {
+    color: var(--grayscale-white);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    background: var(--primary-disabled-blue);
+}
+
+.buttonDisabledSecondary {
+    background: var(--primary-bg-color);
 }

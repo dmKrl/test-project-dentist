@@ -1,6 +1,8 @@
 import { FC, useState } from 'react';
 import { FilterItem } from '../FilterItem/FilterItem';
 import cls from './Filters.module.css';
+import { Button } from '@/shared/Button';
+import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
 
 interface FiltersProps {
     categories?: string[];
@@ -20,16 +22,21 @@ export const Filters: FC<FiltersProps> = ({ categories }) => {
     };
     return (
         <div className={cls.filters}>
-            {categories?.map((category) => {
-                return (
-                    <FilterItem
-                        key={category}
-                        category={category}
-                        handleCheckboxChange={handleCheckboxChange}
-                        selectedCategories={selectedCategories}
-                    />
-                );
-            })}
+            <div className={cls.filtersCheckboxes}>
+                {categories?.map((category) => {
+                    return (
+                        <FilterItem
+                            key={category}
+                            category={category}
+                            handleCheckboxChange={handleCheckboxChange}
+                            selectedCategories={selectedCategories}
+                        />
+                    );
+                })}
+            </div>
+            <Button disabled buttonTheme={ButtonTheme.BUTTON_DISABLED_SEC}>
+                Удалить
+            </Button>
         </div>
     );
 };
