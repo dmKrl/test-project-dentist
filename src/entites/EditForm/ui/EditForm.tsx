@@ -1,14 +1,21 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import cls from './EditForm.module.css';
 import { Input, InputTheme } from '@/shared/Input';
 import { Button } from '@/shared/Button';
 import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
+import { ChangePasswordModal } from '@/features/ChangePassword/Index';
 
 interface EditFormProps {
     className?: string;
 }
 
 export const EditForm: FC<EditFormProps> = () => {
+    const [isOpenChangePassword, setIsOpenChangePassword] = useState(false);
+
+    const handerIsOpenChangePassword = () => {
+        setIsOpenChangePassword((prev) => !prev);
+    };
+
     return (
         <div className={cls.editForm}>
             <div className={cls.inputsBlock}>
@@ -63,6 +70,7 @@ export const EditForm: FC<EditFormProps> = () => {
                 <Button
                     className={cls.editPassword}
                     buttonTheme={ButtonTheme.BUTTON_SECONDARY}
+                    onClick={handerIsOpenChangePassword}
                 >
                     Изменить пароль
                 </Button>
@@ -76,6 +84,10 @@ export const EditForm: FC<EditFormProps> = () => {
             <Button buttonTheme={ButtonTheme.BUTTON_PRIMARY}>
                 Сохранить изменения
             </Button>
+            <ChangePasswordModal
+                isOpen={isOpenChangePassword}
+                onClose={handerIsOpenChangePassword}
+            />
         </div>
     );
 };
