@@ -1,0 +1,10 @@
+.dismissalContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.dismissalButtonsBlock {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 24px;
+}
