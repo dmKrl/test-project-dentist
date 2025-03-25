@@ -1,0 +1,10 @@
+.employeeTooltip {
+    border-radius: 8px !important;
+    padding: 6px 12px;
+    border: 1px solid var(--primary-stroke) !important;
+    background: var(--bg-color) !important;
+    box-shadow: 0 0 11.3px 0 rgb(17 17 17 / 8%) !important;
+    font: var(--font-s) !important;
+    color: var(--grayscale-dark-grey, #4e4e4e) !important;
+    text-align: center;
+}

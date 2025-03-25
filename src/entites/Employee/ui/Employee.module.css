@@ -29,6 +29,7 @@
 .dateQuit {
     min-width: 108px;
     max-width: 108px;
+    justify-content: space-between;
 }
 
 .phone span,
@@ -43,6 +44,10 @@
 .dateJoin span,
 .dateQuit span {
     width: 76px;
+}
+
+.jobPosition {
+    cursor: pointer;
 }
 
 .role {

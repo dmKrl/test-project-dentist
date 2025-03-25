@@ -11,6 +11,7 @@ import { EmployeeItem } from '@/shared/EmployeeItem/ui/EmployeeItem';
 import cls from './Employee.module.css';
 import { Button } from '@/shared/Button';
 import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
+import { CustomTooltip } from '@/shared/CustomTooltip';
 
 interface EmployeeProps {
     className?: string;
@@ -25,7 +26,7 @@ export const Employee: FC<EmployeeProps> = () => {
             phone: '+ 7 (999) 999 99-99',
             mail: 'ksenia.s@pyrobyte.ru',
             password: '•••••••••',
-            jobPosition: 'Разработчик',
+            jobPosition: 'Дикектор',
             role: 'Руководитель МО',
             status: 'Активна',
             pap: false,
@@ -38,7 +39,7 @@ export const Employee: FC<EmployeeProps> = () => {
             phone: '+ 7 (999) 999 99-99',
             mail: 'ksenia.s@pyrobyte.ru',
             password: '•••••••••',
-            jobPosition: 'Менеджер',
+            jobPosition: 'Дикектор',
             role: 'Врач ВК',
             status: 'Активна',
             pap: true,
@@ -81,7 +82,13 @@ export const Employee: FC<EmployeeProps> = () => {
                             </Button>
                         </EmployeeItem>
                         <EmployeeItem className={cls.jobPosition}>
-                            <span>{employee.jobPosition}</span>
+                            <span
+                                data-tooltip-id="job-position"
+                                data-tooltip-content={'Главный врач'}
+                            >
+                                {employee.jobPosition}
+                            </span>
+                            <CustomTooltip id="job-position" place="bottom" />
                         </EmployeeItem>
                         <EmployeeItem className={cls.role}>
                             <span>{employee.role}</span>
@@ -112,8 +119,14 @@ export const Employee: FC<EmployeeProps> = () => {
                         </EmployeeItem>
                         <EmployeeItem className={cls.entry}>
                             <Button buttonTheme={ButtonTheme.CLEAR}>
-                                <BlockIcon />
+                                <BlockIcon
+                                    data-tooltip-id="block-tooltip"
+                                    data-tooltip-content={
+                                        'Разблокировать сотрудника'
+                                    }
+                                />
                             </Button>
+                            <CustomTooltip id="block-tooltip" place="left" />
                         </EmployeeItem>
                         <EmployeeItem className={cls.entry}>
                             <Button buttonTheme={ButtonTheme.CLEAR}>
