@@ -14,6 +14,8 @@ import { CustomTooltip } from '@/shared/CustomTooltip';
 import { AppLink, AppLinkTheme } from '@/shared/AppLink';
 import cls from './Employee.module.css';
 import { DismissalModal } from '@/features/DismissalEmployee/Index';
+import { DeleteModal } from '@/features/DeleteEmployee/Index';
+import { BlockModal } from '@/features/BlockEmployee/Index';
 
 interface EmployeeProps {
     className?: string;
@@ -21,6 +23,8 @@ interface EmployeeProps {
 
 export const Employee: FC<EmployeeProps> = () => {
     const [isDismissalOpen, setIsDismissalOpen] = useState(false);
+    const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+    const [isBlockOpen, setIsBlockOpen] = useState(false);
     const [employees] = useState<TypeEmployee[]>([
         // Ваши данные о сотрудниках (замените моковые данные)
         {
@@ -53,6 +57,12 @@ export const Employee: FC<EmployeeProps> = () => {
 
     const handlerOpenDismissalModal = () => {
         setIsDismissalOpen((prev) => !prev);
+    };
+    const handlerOpenDeleteModal = () => {
+        setIsDeleteOpen((prev) => !prev);
+    };
+    const handlerOpenBlockModal = () => {
+        setIsBlockOpen((prev) => !prev);
     };
 
     return (
@@ -143,7 +153,10 @@ export const Employee: FC<EmployeeProps> = () => {
                                 </Button>
                             </EmployeeItem>
                             <EmployeeItem className={cls.entry}>
-                                <Button buttonTheme={ButtonTheme.CLEAR}>
+                                <Button
+                                    buttonTheme={ButtonTheme.CLEAR}
+                                    onClick={handlerOpenBlockModal}
+                                >
                                     <BlockIcon
                                         data-tooltip-id="block-tooltip"
                                         data-tooltip-content={
@@ -157,7 +170,10 @@ export const Employee: FC<EmployeeProps> = () => {
                                 />
                             </EmployeeItem>
                             <EmployeeItem className={cls.entry}>
-                                <Button buttonTheme={ButtonTheme.CLEAR}>
+                                <Button
+                                    buttonTheme={ButtonTheme.CLEAR}
+                                    onClick={handlerOpenDeleteModal}
+                                >
                                     <DeleteIcon />
                                 </Button>
                             </EmployeeItem>
@@ -169,6 +185,11 @@ export const Employee: FC<EmployeeProps> = () => {
                 isOpen={isDismissalOpen}
                 onClose={handlerOpenDismissalModal}
             />
+            <DeleteModal
+                isOpen={isDeleteOpen}
+                onClose={handlerOpenDeleteModal}
+            />
+            <BlockModal isOpen={isBlockOpen} onClose={handlerOpenBlockModal} />
         </>
     );
 };
