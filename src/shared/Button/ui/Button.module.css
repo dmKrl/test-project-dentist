@@ -42,7 +42,8 @@
     background: var(--primary-blue-hover);
 }
 
-.buttonSecondary {
+.buttonSecondary,
+.buttonSecondarySmall {
     font: var(--font-s);
     color: var(--primary-text-color);
     font-feature-settings:
@@ -50,6 +51,10 @@
         'clig' off;
     background: var(--primary-light-blue);
     transition: 0.2s background ease;
+}
+
+.buttonSecondarySmall {
+    padding: 10px 24px;
 }
 
 .buttonSecondary:hover {

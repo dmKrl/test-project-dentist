@@ -1,0 +1,71 @@
+.employee {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.employee tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-stroke);
+}
+
+.employee td {
+    padding: 20px 16px;
+}
+
+.entryStart {
+    min-width: 54px;
+}
+
+.fullName,
+.phone,
+.mail,
+.password,
+.jobPosition,
+.status,
+.dateJoin,
+.dateQuit {
+    min-width: 108px;
+    max-width: 108px;
+}
+
+.phone span,
+.mail span,
+.password span {
+    max-width: 44px;
+}
+
+.fullName span,
+.jobPosition span,
+.status span,
+.dateJoin span,
+.dateQuit span {
+    width: 76px;
+}
+
+.role {
+    min-width: 215px;
+}
+
+.pap {
+    max-width: 66px;
+}
+
+.pap span {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: var(--grayscale-disabled-grey);
+}
+
+.dismiss {
+    min-width: 133px;
+}
+
+.entry {
+    display: flex;
+    justify-content: center;
+    min-width: 56px;
+}

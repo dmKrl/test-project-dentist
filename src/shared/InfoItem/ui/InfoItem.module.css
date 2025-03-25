@@ -1,0 +1,11 @@
+.infoItem {
+    padding: 16px;
+    font: var(--font-m);
+    overflow: hidden;
+    color: var(--grayscale-grey);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

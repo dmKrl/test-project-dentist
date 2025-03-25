@@ -1,0 +1,17 @@
+.employeeItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.employeeItem span {
+    overflow: hidden;
+    font: var(--font-m);
+    color: var(--primary-text-color);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}

@@ -1,0 +1,39 @@
+.tableInfo {
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    background: var(--primary-bg-color);
+    margin-bottom: 8px;
+}
+
+.entryStart {
+    min-width: 54px;
+}
+
+.fullName,
+.phone,
+.mail,
+.password,
+.jobPosition,
+.status,
+.dateJoin,
+.dateQuit {
+    min-width: 108px;
+    max-width: 108px;
+}
+
+.role {
+    min-width: 215px;
+}
+
+.pap {
+    max-width: 66px;
+}
+
+.dismiss {
+    min-width: 133px;
+}
+
+.entry {
+    min-width: 56px;
+}

@@ -14,11 +14,11 @@ export const DropdownsName: FC<DropdownsNameProps> = ({ data, className }) => {
     return (
         <div className={classNames(cls.dropdownsStatus, {}, [className])}>
             <div className={cls.dropdownsName}>
-                {data.map((item) => {
+                {data.map((item, index) => {
                     return (
                         <DropdownItem
                             dropdownTheme={DropdownItemTheme.ITEM_NAME}
-                            key={item}
+                            key={index}
                         >
                             {item}
                         </DropdownItem>

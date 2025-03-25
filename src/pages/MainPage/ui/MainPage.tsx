@@ -3,6 +3,7 @@ import cls from './MainPage.module.css';
 import { Tabs } from '@/widgets/Tabs';
 import { Filters } from '@/widgets/Filters';
 import { Dropdowns } from '@/widgets/Dropdowns';
+import { Table } from '@/widgets/Table';
 
 export const MainPage = () => {
     return (
@@ -19,6 +20,7 @@ export const MainPage = () => {
                     'Отображать заблокированных',
                 ]}
             />
+            <Table />
         </section>
     );
 };
