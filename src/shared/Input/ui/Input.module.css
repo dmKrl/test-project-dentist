@@ -36,3 +36,42 @@
         'clig' off;
     text-overflow: ellipsis;
 }
+
+.formInput input {
+    display: flex;
+    gap: 24px;
+    font: var(--font-m);
+    color: var(--primary-text-color);
+    width: 496px;
+    border-radius: 16px;
+    background: var(--primary-bg-color);
+    padding: 16px;
+    outline: none;
+    border: none;
+}
+
+.formInput input::placeholder {
+    overflow: hidden;
+    color: var(--grayscale-grey, #a3a3a3);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    text-overflow: ellipsis;
+}
+
+.formInput label {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+.formInput label span {
+    font: var(--font-m);
+    color: var(--grayscale-dark-grey);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    width: 200px;
+    text-align: start;
+}

@@ -8,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     inputTheme: InputTheme;
     placeholder?: string;
     className?: string;
-    value?: string;
+    value?: string | number | undefined;
     checked?: boolean | undefined;
     isActiveRadio?: boolean;
     labelInput?: ReactNode;
@@ -43,7 +43,7 @@ export const Input: FC<InputProps> = (props) => {
                         value={value}
                         defaultChecked={checked}
                     />
-                    {labelInput && labelInput}
+                    {labelInput && <span>{labelInput}</span>}
                 </label>
             }
         </div>

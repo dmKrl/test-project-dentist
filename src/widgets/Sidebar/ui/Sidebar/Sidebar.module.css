@@ -21,6 +21,7 @@
 
 .collapsedButton {
     transition: 0.2s transform ease;
+    z-index: 9;
 }
 
 .collapsed {

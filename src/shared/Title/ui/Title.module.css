@@ -13,3 +13,10 @@
         'clig' off;
     text-overflow: ellipsis;
 }
+
+.link {
+    color: var(--grayscale-white);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+}

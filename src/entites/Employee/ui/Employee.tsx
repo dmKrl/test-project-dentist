@@ -8,10 +8,11 @@ import Check from '../assets/check.svg?react';
 import { TypeEmployee } from '../model/types/employee';
 import { Input, InputTheme } from '@/shared/Input';
 import { EmployeeItem } from '@/shared/EmployeeItem/ui/EmployeeItem';
-import cls from './Employee.module.css';
 import { Button } from '@/shared/Button';
 import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
 import { CustomTooltip } from '@/shared/CustomTooltip';
+import { AppLink, AppLinkTheme } from '@/shared/AppLink';
+import cls from './Employee.module.css';
 
 interface EmployeeProps {
     className?: string;
@@ -21,7 +22,7 @@ export const Employee: FC<EmployeeProps> = () => {
     const [employees] = useState<TypeEmployee[]>([
         // Ваши данные о сотрудниках (замените моковые данные)
         {
-            id: '1',
+            id: 1,
             fullName: 'Иванов Иван Иванович',
             phone: '+ 7 (999) 999 99-99',
             mail: 'ksenia.s@pyrobyte.ru',
@@ -34,7 +35,7 @@ export const Employee: FC<EmployeeProps> = () => {
             dateQuit: '29.03.2023',
         },
         {
-            id: '2',
+            id: 2,
             fullName: 'Петров Петр Петрович',
             phone: '+ 7 (999) 999 99-99',
             mail: 'ksenia.s@pyrobyte.ru',
@@ -114,7 +115,12 @@ export const Employee: FC<EmployeeProps> = () => {
                         </EmployeeItem>
                         <EmployeeItem className={cls.entry}>
                             <Button buttonTheme={ButtonTheme.CLEAR}>
-                                <EditIcon />
+                                <AppLink
+                                    to="/edit"
+                                    linkTheme={AppLinkTheme.LINK_CLEAR}
+                                >
+                                    <EditIcon />
+                                </AppLink>
                             </Button>
                         </EmployeeItem>
                         <EmployeeItem className={cls.entry}>

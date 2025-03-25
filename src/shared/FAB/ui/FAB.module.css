@@ -1,0 +1,9 @@
+.fAB {
+    border-radius: 324px;
+    background: var(--grayscale-black);
+    box-shadow: 0 11px 10.8px 0 rgb(47 75 113 / 13%);
+    padding: 16px;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}

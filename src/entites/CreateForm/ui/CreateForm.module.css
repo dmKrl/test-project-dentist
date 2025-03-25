@@ -1,0 +1,14 @@
+.createForm,
+.inputsBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.createForm {
+    gap: 24px;
+    max-width: 720px;
+}
+
+.inputsBlock {
+    gap: 16px;
+}

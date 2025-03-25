@@ -1,0 +1,19 @@
+.editForm,
+.inputsBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.editForm {
+    gap: 24px;
+    max-width: 720px;
+}
+
+.inputsBlock {
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.editPassword {
+    width: 496px;
+}

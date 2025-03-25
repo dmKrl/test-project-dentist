@@ -1,0 +1,21 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.breadcrumbsText,
+.breadcrumbsName {
+    font: var(--font-s);
+    text-align: center;
+}
+
+.breadcrumbsText {
+    display: flex;
+    gap: 4px;
+    color: var(--grayscale-grey);
+}
+
+.breadcrumbsName {
+    color: var(--primary-blue);
+}
