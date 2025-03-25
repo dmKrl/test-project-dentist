@@ -1,0 +1,14 @@
+.infoForm,
+.inputsBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoForm {
+    gap: 24px;
+    max-width: 720px;
+}
+
+.inputsBlock {
+    gap: 16px;
+}

@@ -62,7 +62,12 @@ export const Employee: FC<EmployeeProps> = () => {
                             />
                         </td>
                         <EmployeeItem className={cls.fullName}>
-                            <span>{employee.fullName}</span>
+                            <AppLink
+                                to="/info"
+                                linkTheme={AppLinkTheme.LINK_CLEAR}
+                            >
+                                <span>{employee.fullName}</span>
+                            </AppLink>
                         </EmployeeItem>
                         <EmployeeItem className={cls.phone}>
                             <span>{employee.phone}</span>
