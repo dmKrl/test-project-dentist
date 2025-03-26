@@ -2,7 +2,7 @@ import { Title } from '@/shared/Title/ui/Title';
 import cls from './CreateEmployeePage.module.css';
 import { FAB } from '@/shared/FAB';
 import { Breadcrumbs } from '@/shared/Breadcrumbs';
-import { CreateForm } from '@/entites/CreateForm';
+import { CreateForm } from '@/features/CreateEmployee';
 
 export const CreateEmployeePage = () => {
     return (

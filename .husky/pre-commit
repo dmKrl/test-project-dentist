@@ -1,3 +1,2 @@
-npm run format
 npm run lint:ts
 npm run lint:css

@@ -14,8 +14,8 @@ import { CustomTooltip } from '@/shared/CustomTooltip';
 import { AppLink, AppLinkTheme } from '@/shared/AppLink';
 import cls from './Employee.module.css';
 import { BlockModal } from '@/features/BlockEmployee/Index';
-import { DismissalModal } from '@/features/DismissalEmployee/Index';
-import { DeleteModal } from '@/features/DeleteEmployee/Index';
+import { DismissalModal } from '@/features/DismissalEmployee';
+import { DeleteModal } from '@/features/DeleteEmployee';
 
 interface EmployeeProps {
     className?: string;

@@ -34,6 +34,13 @@ interface MedicalPosition {
     label: string;
 }
 
+export interface DataPagination {
+    page: number;
+    per_page: number;
+    total: number;
+    last_page: number;
+}
+
 export interface EmployeeSchema {
     dataEmployee: TypeEmployee[];
 }

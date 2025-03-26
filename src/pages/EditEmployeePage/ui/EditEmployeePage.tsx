@@ -4,7 +4,7 @@ import { FAB } from '@/shared/FAB';
 import { Breadcrumbs } from '@/shared/Breadcrumbs';
 import { TypeEmployee } from '@/entites/Employee';
 import { FC } from 'react';
-import { EditForm } from '@/entites/EditForm/ui/EditForm';
+import { EditForm } from '@/features/EditEmployee/ui/EditForm/EditForm';
 
 interface EditPageProps {
     employeer?: TypeEmployee;
