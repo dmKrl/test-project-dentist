@@ -14,7 +14,7 @@ export const Table: FC<TableProps> = ({ employees }) => {
     return (
         <table className={cls.table}>
             <TableInfo />
-            <Employee />
+            <Employee employees={employees} />
         </table>
     );
 };

@@ -5,7 +5,7 @@ import PasswordIcon from '../assets/checkPassword.svg?react';
 import DeleteIcon from '../assets/delete.svg?react';
 import EditIcon from '../assets/edit.svg?react';
 import Check from '../assets/check.svg?react';
-import { TypeEmployee } from '../model/types/employee';
+import { TypeEmployeeDB } from '../model/types/employee';
 import { Input, InputTheme } from '@/shared/Input';
 import { EmployeeItem } from '@/shared/EmployeeItem/ui/EmployeeItem';
 import { Button } from '@/shared/Button';
@@ -16,44 +16,25 @@ import cls from './Employee.module.css';
 import { BlockModal } from '@/features/BlockEmployee/Index';
 import { DismissalModal } from '@/features/DismissalEmployee';
 import { DeleteModal } from '@/features/DeleteEmployee';
+import { changeToFullname } from '../model/lib/changeToFullname';
+import { observer } from 'mobx-react-lite';
+import { infoEmployeeStore } from '@/entites/InfoForm';
 
 interface EmployeeProps {
     className?: string;
+    employees?: TypeEmployeeDB[] | undefined;
 }
 
-export const Employee: FC<EmployeeProps> = () => {
+export const Employee: FC<EmployeeProps> = observer(({ employees }) => {
     const [isDismissalOpen, setIsDismissalOpen] = useState(false);
     const [isDeleteOpen, setIsDeleteOpen] = useState(false);
     const [isBlockOpen, setIsBlockOpen] = useState(false);
-    const [employees] = useState<TypeEmployee[]>([
-        // Ваши данные о сотрудниках (замените моковые данные)
-        {
-            id: 1,
-            fullName: 'Иванов Иван Иванович',
-            phone: '+ 7 (999) 999 99-99',
-            mail: 'ksenia.s@pyrobyte.ru',
-            password: '•••••••••',
-            jobPosition: 'Дикектор',
-            role: 'Руководитель МО',
-            status: 'Активна',
-            pap: false,
-            dateJoin: '29.03.2023',
-            dateQuit: '29.03.2023',
-        },
-        {
-            id: 2,
-            fullName: 'Петров Петр Петрович',
-            phone: '+ 7 (999) 999 99-99',
-            mail: 'ksenia.s@pyrobyte.ru',
-            password: '•••••••••',
-            jobPosition: 'Дикектор',
-            role: 'Врач ВК',
-            status: 'Активна',
-            pap: true,
-            dateJoin: '29.03.2023',
-            dateQuit: '29.03.2023',
-        },
-    ]);
+
+    const changeChoosenEmployeer = (employee: TypeEmployeeDB) => {
+        if (employee) {
+            infoEmployeeStore.setChoosenEmployee(employee);
+        }
+    };
 
     const handlerOpenDismissalModal = () => {
         setIsDismissalOpen((prev) => !prev);
@@ -68,7 +49,7 @@ export const Employee: FC<EmployeeProps> = () => {
     return (
         <>
             <tbody className={cls.employee}>
-                {employees.map((employee) => {
+                {employees?.map((employee) => {
                     return (
                         <tr key={employee.id}>
                             <td>
@@ -84,8 +65,25 @@ export const Employee: FC<EmployeeProps> = () => {
                                     to="/info"
                                     linkTheme={AppLinkTheme.LINK_CLEAR}
                                 >
-                                    <span>{employee.fullName}</span>
+                                    <span
+                                        onClick={() =>
+                                            changeChoosenEmployeer(employee)
+                                        }
+                                        data-tooltip-id="fullName"
+                                        data-tooltip-content={changeToFullname(
+                                            employee.surname,
+                                            employee.name,
+                                            employee.patronymic,
+                                        )}
+                                    >
+                                        {changeToFullname(
+                                            employee.surname,
+                                            employee.name,
+                                            employee.patronymic,
+                                        )}
+                                    </span>
                                 </AppLink>
+                                <CustomTooltip id="fullName" place="bottom" />
                             </EmployeeItem>
                             <EmployeeItem className={cls.phone}>
                                 <span>{employee.phone}</span>
@@ -94,13 +92,13 @@ export const Employee: FC<EmployeeProps> = () => {
                                 </Button>
                             </EmployeeItem>
                             <EmployeeItem className={cls.mail}>
-                                <span>{employee.mail}</span>
+                                <span>{employee.email}</span>
                                 <Button buttonTheme={ButtonTheme.CLEAR}>
                                     <CopyIcon />
                                 </Button>
                             </EmployeeItem>
                             <EmployeeItem className={cls.password}>
-                                <span>{employee.password}</span>
+                                <span>•••••••••</span>
                                 <Button buttonTheme={ButtonTheme.CLEAR}>
                                     <PasswordIcon />
                                 </Button>
@@ -108,9 +106,11 @@ export const Employee: FC<EmployeeProps> = () => {
                             <EmployeeItem className={cls.jobPosition}>
                                 <span
                                     data-tooltip-id="job-position"
-                                    data-tooltip-content={'Главный врач'}
+                                    data-tooltip-content={
+                                        employee.medical_position?.label
+                                    }
                                 >
-                                    {employee.jobPosition}
+                                    {employee.medical_position?.label}
                                 </span>
                                 <CustomTooltip
                                     id="job-position"
@@ -118,19 +118,21 @@ export const Employee: FC<EmployeeProps> = () => {
                                 />
                             </EmployeeItem>
                             <EmployeeItem className={cls.role}>
-                                <span>{employee.role}</span>
+                                <span>
+                                    {employee.administrative_position?.label}
+                                </span>
                             </EmployeeItem>
                             <EmployeeItem className={cls.status}>
-                                <span>{employee.status}</span>
+                                <span>{employee?.status?.label}</span>
                             </EmployeeItem>
                             <EmployeeItem className={cls.pap}>
                                 <span>{<Check />}</span>
                             </EmployeeItem>
                             <EmployeeItem className={cls.dateJoin}>
-                                <span>{employee.dateJoin}</span>
+                                <span>{employee.hired_at}</span>
                             </EmployeeItem>
                             <EmployeeItem className={cls.dateQuit}>
-                                <span>{employee.dateQuit}</span>
+                                <span>{employee.fired_at}</span>
                             </EmployeeItem>
                             <EmployeeItem className={cls.dismiss}>
                                 <Button
@@ -192,4 +194,4 @@ export const Employee: FC<EmployeeProps> = () => {
             <BlockModal isOpen={isBlockOpen} onClose={handlerOpenBlockModal} />
         </>
     );
-};
+});

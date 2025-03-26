@@ -52,11 +52,11 @@ export type TypeEmployeeDB = {
     patronymic: string;
     email: string;
     phone: string;
-    department: Department;
-    status: Status;
+    department: Department | null;
+    status: Status | null;
     roles: [];
-    administrative_position: AdministrativePosition;
-    medical_position: MedicalPosition;
+    administrative_position: AdministrativePosition | null;
+    medical_position: MedicalPosition | null;
     hired_at: number;
     fired_at: number;
 };

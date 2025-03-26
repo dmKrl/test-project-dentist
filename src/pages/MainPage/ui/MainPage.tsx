@@ -7,11 +7,14 @@ import { Table } from '@/widgets/Table';
 import { FAB } from '@/shared/FAB';
 import { useEffect } from 'react';
 import { getEmployeeStore } from '@/entites/Employee';
+import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
 
 export const MainPage = observer(() => {
+    const employees: TypeEmployeeDB[] = getEmployeeStore.employees;
+
     useEffect(() => {
         getEmployeeStore.getEmployees();
-    }, []);
+    }, [getEmployeeStore]);
 
     return (
         <section>
@@ -27,7 +30,7 @@ export const MainPage = observer(() => {
                     'Отображать заблокированных',
                 ]}
             />
-            <Table />
+            <Table employees={employees} />
             <FAB />
         </section>
     );
