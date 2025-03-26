@@ -10,7 +10,7 @@ export type TypeEmployee = {
     pap: string | boolean;
     dateJoin: string;
     dateQuit: string | null;
-}
+};
 
 interface Department {
     value: string;
@@ -35,7 +35,7 @@ interface MedicalPosition {
 }
 
 export interface EmployeeSchema {
-    dataEmployee: TypeEmployee[],
+    dataEmployee: TypeEmployee[];
 }
 
 export type TypeEmployeeDB = {
@@ -52,4 +52,4 @@ export type TypeEmployeeDB = {
     medical_position: MedicalPosition;
     hired_at: number;
     fired_at: number;
-}
+};

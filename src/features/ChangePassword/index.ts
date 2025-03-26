@@ -1,1 +1,1 @@
-export { ChangePasswordModal } from "./ui/ChangePasswordModal/ChangePassordModal";
+export { ChangePasswordModal } from './ui/ChangePasswordModal/ChangePassordModal';

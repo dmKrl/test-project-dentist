@@ -1,2 +1,1 @@
-export { ModalContent } from "./ui/ModalContent";
-
+export { ModalContent } from './ui/ModalContent';

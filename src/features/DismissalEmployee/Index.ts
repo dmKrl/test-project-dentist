@@ -1,1 +1,1 @@
-export { DismissalModal } from "./ui/DismissalModal/DismissalModal";
+export { DismissalModal } from './ui/DismissalModal/DismissalModal';

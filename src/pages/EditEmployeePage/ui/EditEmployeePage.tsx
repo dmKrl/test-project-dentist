@@ -11,15 +11,12 @@ interface EditPageProps {
 }
 
 export const EditEmployeePage: FC<EditPageProps> = ({ employeer }) => {
-
-
     return (
         <section className={cls.EditEmployeePage}>
             <Breadcrumbs namePage="Редактирование карточки сотрудника" />
             <Title>{employeer?.fullName || 'Иванов Иван Иванович'}</Title>
             <EditForm />
             <FAB />
-           
         </section>
     );
 };

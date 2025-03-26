@@ -1,1 +1,1 @@
-export { InfoForm } from "./ui/InfoForm";
+export { InfoForm } from './ui/InfoForm';

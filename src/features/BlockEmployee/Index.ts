@@ -1,1 +1,1 @@
-export { BlockModal } from "./ui/BlockModal/BlockModal";
+export { BlockModal } from './ui/BlockModal/BlockModal';

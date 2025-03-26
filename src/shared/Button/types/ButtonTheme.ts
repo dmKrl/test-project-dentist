@@ -5,5 +5,5 @@ export enum ButtonTheme {
     BUTTON_SECONDARY = 'buttonSecondary',
     BUTTON_SECONDARY_SMALL = 'buttonSecondarySmall',
     BUTTON_DISABLED_PRIM = 'buttonDisabledPrimary',
-    BUTTON_DISABLED_SEC = 'buttonDisabledSecondary'
+    BUTTON_DISABLED_SEC = 'buttonDisabledSecondary',
 }

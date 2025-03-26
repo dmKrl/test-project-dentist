@@ -1,4 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npm run refactor:fix
+npm run format
+npm run lint:ts
+npm run lint:css

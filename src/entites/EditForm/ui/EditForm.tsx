@@ -3,7 +3,7 @@ import cls from './EditForm.module.css';
 import { Input, InputTheme } from '@/shared/Input';
 import { Button } from '@/shared/Button';
 import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
-import { ChangePasswordModal } from '@/features/ChangePassword/Index';
+import { ChangePasswordModal } from '@/features/ChangePassword';
 
 interface EditFormProps {
     className?: string;
