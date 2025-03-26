@@ -4,11 +4,11 @@ import { makeAutoObservable, runInAction } from 'mobx';
 class InfoEmployeeStore {
     choosenEmployee: TypeEmployeeDB = {
         id: '',
-        name: 'string',
-        surname: 'string',
-        patronymic: 'string',
-        email: 'string',
-        phone: 'string',
+        name: '',
+        surname: '',
+        patronymic: '',
+        email: '',
+        phone: '',
         department: null,
         status: null,
         roles: [],

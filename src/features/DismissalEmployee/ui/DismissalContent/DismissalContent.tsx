@@ -1,11 +1,20 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { ModalContent } from '@/shared/ModalContent';
+import { deleteEmployeeStore } from '@/features/DeleteEmployee';
+import { infoEmployeeStore } from '@/entites/InfoForm';
 
 interface DismissalContentProps {
     onClose: () => void;
 }
 
 export const DismissalContent: FC<DismissalContentProps> = ({ onClose }) => {
+    const employerId: string | number | undefined =
+        infoEmployeeStore.choosenEmployee.id;
+
+    const handleOnDismissalEmployer = useCallback(() => {
+        deleteEmployeeStore.deleteEmployee(employerId);
+        onClose();
+    }, [deleteEmployeeStore]);
     return (
         <div>
             <ModalContent
@@ -15,6 +24,7 @@ export const DismissalContent: FC<DismissalContentProps> = ({ onClose }) => {
                 buttonTodoText="Уволить"
                 isChange
                 onClose={onClose}
+                onTodo={handleOnDismissalEmployer}
             />
         </div>
     );

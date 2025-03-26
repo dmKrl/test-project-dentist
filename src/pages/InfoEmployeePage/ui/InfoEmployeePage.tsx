@@ -10,7 +10,7 @@ interface InfoPageProps {
     employeer?: TypeEmployeeDB;
 }
 
-export const InfoEmployeePage: FC<InfoPageProps> = ({ employeer }) => {
+export const InfoEmployeePage: FC<InfoPageProps> = () => {
     const chosenEmployer = infoEmployeeStore.choosenEmployee;
 
     return (
@@ -18,10 +18,10 @@ export const InfoEmployeePage: FC<InfoPageProps> = ({ employeer }) => {
             <Breadcrumbs namePage="Информация о сотруднике" />
             <Title>
                 {changeToFullname(
-                    employeer?.surname,
-                    employeer?.name,
-                    employeer?.patronymic,
-                ) || 'Иванов Иван Иванович'}
+                    chosenEmployer?.surname,
+                    chosenEmployer?.name,
+                    chosenEmployer?.patronymic,
+                )}
             </Title>
             <InfoForm chosenEmployer={chosenEmployer} />
             <FAB />

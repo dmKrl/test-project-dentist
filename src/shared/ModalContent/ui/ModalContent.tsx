@@ -10,6 +10,7 @@ interface ModalContentProps {
     isError?: boolean;
     isChange?: boolean;
     onClose: () => void;
+    onTodo?: () => void;
 }
 
 export const ModalContent: FC<ModalContentProps> = ({
@@ -19,6 +20,7 @@ export const ModalContent: FC<ModalContentProps> = ({
     isError,
     isChange,
     onClose,
+    onTodo,
 }) => {
     return (
         <>
@@ -29,7 +31,10 @@ export const ModalContent: FC<ModalContentProps> = ({
 
             {isChange && (
                 <div className={cls.buttonsBlock}>
-                    <Button buttonTheme={ButtonTheme.BUTTON_SECONDARY}>
+                    <Button
+                        onClick={onTodo}
+                        buttonTheme={ButtonTheme.BUTTON_SECONDARY}
+                    >
                         {buttonTodoText}
                     </Button>
                     <Button

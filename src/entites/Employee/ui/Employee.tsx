@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import CopyIcon from '../assets/copyIcon.svg?react';
 import BlockIcon from '../assets/block.svg?react';
 import PasswordIcon from '../assets/checkPassword.svg?react';
@@ -19,6 +19,7 @@ import { DeleteModal } from '@/features/DeleteEmployee';
 import { changeToFullname } from '../model/lib/changeToFullname';
 import { observer } from 'mobx-react-lite';
 import { infoEmployeeStore } from '@/entites/InfoForm';
+import { formatDate } from '../model/lib/FormatDate';
 
 interface EmployeeProps {
     className?: string;
@@ -36,22 +37,25 @@ export const Employee: FC<EmployeeProps> = observer(({ employees }) => {
         }
     };
 
-    const handlerOpenDismissalModal = () => {
+    const handlerOpenDismissalModal = useCallback(() => {
         setIsDismissalOpen((prev) => !prev);
-    };
-    const handlerOpenDeleteModal = () => {
+    }, [setIsDismissalOpen]);
+    const handlerOpenDeleteModal = useCallback(() => {
         setIsDeleteOpen((prev) => !prev);
-    };
-    const handlerOpenBlockModal = () => {
+    }, [setIsDeleteOpen]);
+    const handlerOpenBlockModal = useCallback(() => {
         setIsBlockOpen((prev) => !prev);
-    };
+    }, [setIsBlockOpen]);
 
     return (
         <>
             <tbody className={cls.employee}>
                 {employees?.map((employee) => {
                     return (
-                        <tr key={employee.id}>
+                        <tr
+                            key={employee.id}
+                            onClick={() => changeChoosenEmployeer(employee)}
+                        >
                             <td>
                                 <Input
                                     type="checkbox"
@@ -66,9 +70,6 @@ export const Employee: FC<EmployeeProps> = observer(({ employees }) => {
                                     linkTheme={AppLinkTheme.LINK_CLEAR}
                                 >
                                     <span
-                                        onClick={() =>
-                                            changeChoosenEmployeer(employee)
-                                        }
                                         data-tooltip-id="fullName"
                                         data-tooltip-content={changeToFullname(
                                             employee.surname,
@@ -129,10 +130,10 @@ export const Employee: FC<EmployeeProps> = observer(({ employees }) => {
                                 <span>{<Check />}</span>
                             </EmployeeItem>
                             <EmployeeItem className={cls.dateJoin}>
-                                <span>{employee.hired_at}</span>
+                                <span>{formatDate(employee.hired_at)}</span>
                             </EmployeeItem>
                             <EmployeeItem className={cls.dateQuit}>
-                                <span>{employee.fired_at}</span>
+                                <span>{formatDate(employee.fired_at)}</span>
                             </EmployeeItem>
                             <EmployeeItem className={cls.dismiss}>
                                 <Button

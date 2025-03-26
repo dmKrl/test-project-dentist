@@ -1,8 +1,7 @@
-import ky from 'ky';
 import { DataPagination, TypeEmployeeDB } from '../types/employee';
 import { makeAutoObservable, runInAction } from 'mobx';
-
-const mainUrl = 'https://api.mock.sb21.ru';
+import { mainUrl } from '../env/mainEnv';
+import ky from 'ky';
 
 interface IEmployeeData {
     items: TypeEmployeeDB[];
@@ -29,7 +28,7 @@ class EmployeeStore {
         this.error = null;
         try {
             const responseEmployee = await ky
-                .get(`${mainUrl}/api/v1/users`)
+                .get(`${mainUrl}/api/v1/users?sort=id`)
                 .json<IEmployeeResponse>();
             console.log(responseEmployee);
             runInAction(() => {
@@ -40,8 +39,8 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                    (this.error =
-                        error.message || 'Ошибка при загрузке сотрудников'),
+                (this.error =
+                    error.message || 'Ошибка при загрузке сотрудников'),
             );
         } finally {
             runInAction(() => (this.loading = false));

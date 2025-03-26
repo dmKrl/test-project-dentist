@@ -2,6 +2,7 @@ import { FC } from 'react';
 import cls from './InfoForm.module.css';
 import { Input, InputTheme } from '@/shared/Input';
 import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
+import { formatDate } from '@/entites/Employee/model/lib/FormatDate';
 
 interface InfoFormProps {
     className?: string;
@@ -69,7 +70,7 @@ export const InfoForm: FC<InfoFormProps> = ({ chosenEmployer }) => {
                     inputTheme={InputTheme.FORM_INPUT}
                 />
                 <Input
-                    value={chosenEmployer?.hired_at}
+                    value={formatDate(chosenEmployer?.hired_at)}
                     labelInput="Дата принятия на работу"
                     placeholder="Выберите дату"
                     type="text"
