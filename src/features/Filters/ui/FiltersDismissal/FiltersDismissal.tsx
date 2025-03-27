@@ -14,22 +14,22 @@ export const FiltersDismissal = observer(() => {
                     key={uuidv4()}
                     categoryLabel={'Выбрать всех'}
                     category={'All'}
-                    handleCheckboxChange={filterStore.toggleCategory}
-                    selectedCategories={filterStore.selectedCatogories}
+                    handleCheckboxChange={filterStore.toggleisAll}
+                    selectedData={filterStore.selectedCatogories}
                 />
                 <FilterItem
                     key={uuidv4()}
                     categoryLabel={'Отображать уволенных'}
                     category={'Уволен'}
                     handleCheckboxChange={filterStore.toggleCategory}
-                    selectedCategories={filterStore.selectedCatogories}
+                    selectedData={filterStore.selectedCatogories}
                 />
                 <FilterItem
                     key={uuidv4()}
                     categoryLabel={'Отображать заблокированных'}
                     category={'All'}
                     handleCheckboxChange={filterStore.toggleCategory}
-                    selectedCategories={filterStore.selectedCatogories}
+                    selectedData={filterStore.selectedCatogories}
                 />
             </div>
             <Button disabled buttonTheme={ButtonTheme.BUTTON_DISABLED_SEC}>

@@ -41,5 +41,7 @@
 
 .dropdownItems {
     display: flex;
+    max-width: 550px;
+    overflow: hidden;
     gap: 10px;
 }

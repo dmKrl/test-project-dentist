@@ -20,6 +20,7 @@ import { changeToFullname } from '../model/lib/changeToFullname';
 import { observer } from 'mobx-react-lite';
 import { infoEmployeeStore } from '@/entites/InfoForm';
 import { formatDate } from '../model/lib/FormatDate';
+import { filterStore } from '@/features/Filters';
 
 interface EmployeeProps {
     className?: string;
@@ -62,6 +63,9 @@ export const Employee: FC<EmployeeProps> = observer(({ employees }) => {
                                     value={employee.id}
                                     className={cls.employeeCheckbox}
                                     inputTheme={InputTheme.CHECKBOX_INPUT}
+                                    checked={
+                                        filterStore.selectIsAll ? true : false
+                                    }
                                 />
                             </td>
                             <EmployeeItem className={cls.fullName}>

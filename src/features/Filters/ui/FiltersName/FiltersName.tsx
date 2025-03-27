@@ -15,6 +15,7 @@ interface FilterName {
 
 export const FiltersName: FC<FilterName> = observer(
     ({ filteredEmployees, className }) => {
+        console.log(filterStore.selectIsAll);
         return (
             <div className={classNames(cls.filters, {}, [className])}>
                 <div className={cls.filtersCheckboxes}>
@@ -27,11 +28,13 @@ export const FiltersName: FC<FilterName> = observer(
                                     employer.name,
                                     employer.patronymic,
                                 )}
-                                category={employer.surname}
+                                category={changeToFullname(
+                                    employer.surname,
+                                    employer.name,
+                                    employer.patronymic,
+                                )}
                                 handleCheckboxChange={filterStore.toggleName}
-                                selectedCategories={
-                                    filterStore.selectedCatogories
-                                }
+                                selectedData={filterStore.selectedName}
                                 className={cls.filterNameItem}
                             />
                         );

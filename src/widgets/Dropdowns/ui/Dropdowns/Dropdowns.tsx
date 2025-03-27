@@ -20,7 +20,7 @@ export const Dropdowns: FC<DropdownsProps> = observer(
                 />
                 <DropdownsStatus
                     className={cls.dropdownsContainer}
-                    listRoles={getEmployeeStore.departments}
+                    listRoles={getEmployeeStore.positions}
                 />
             </div>
         );

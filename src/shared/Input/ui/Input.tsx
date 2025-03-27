@@ -5,7 +5,7 @@ import cls from './Input.module.css';
 
 type InputExtends = Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    'type' | 'onChange'
+    'type' | 'onChange' | 'checked'
 >;
 
 interface InputProps extends InputExtends {

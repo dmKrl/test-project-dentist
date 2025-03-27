@@ -4,6 +4,7 @@ class FilterStore {
     selectedCatogories: string[] = [];
     selectedName: string[] = [];
     selectendRole: string[] = [];
+    selectIsAll: string = '';
 
     constructor() {
         makeAutoObservable(this);
@@ -16,6 +17,14 @@ class FilterStore {
             );
         } else {
             this.selectedCatogories = [...this.selectedCatogories, category];
+        }
+    };
+
+    toggleisAll = (name: string) => {
+        if (this.selectIsAll === 'All') {
+            this.selectIsAll = '';
+        } else {
+            this.selectIsAll = name;
         }
     };
 

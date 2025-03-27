@@ -4,7 +4,7 @@ import { Input, InputTheme } from '@/shared/Input';
 interface FilterItemProps {
     category: string;
     categoryLabel: string;
-    selectedCategories: string[];
+    selectedData: string[];
     handleCheckboxChange: (category: string) => void;
     className?: string;
 }
@@ -13,7 +13,7 @@ export const FilterItem: FC<FilterItemProps> = ({
     category,
     categoryLabel,
     handleCheckboxChange,
-    selectedCategories,
+    selectedData,
     className,
 }) => {
     return (
@@ -22,7 +22,7 @@ export const FilterItem: FC<FilterItemProps> = ({
             value={category}
             labelInput={categoryLabel}
             inputTheme={InputTheme.CHECKBOX_INPUT}
-            checked={selectedCategories.includes(category)}
+            checked={selectedData.includes(category)}
             onChange={() => handleCheckboxChange(category)}
             className={className}
         />

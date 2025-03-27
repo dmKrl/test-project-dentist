@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import ArrowSelect from '@/shared/assets/arrowSelect.svg?react';
 import { DropdownItem } from '@/shared/DropdownItem';
 import { DropdownItemTheme } from '@/shared/DropdownItem/types/ItemTheme';
-import { Department } from '@/entites/Employee/model/types/infoSchema';
+import { Position } from '@/entites/Employee/model/types/infoSchema';
 import { FiltersRole, filterStore } from '@/features/Filters';
 import { v4 as uuidv4 } from 'uuid';
 import cls from './DropdownsStatus.module.css';
@@ -11,7 +11,7 @@ import { observer } from 'mobx-react-lite';
 
 interface DropdownsStatusProps {
     className: string;
-    listRoles: Department[];
+    listRoles: Position[];
 }
 
 export const DropdownsStatus: FC<DropdownsStatusProps> = observer(
@@ -34,13 +34,13 @@ export const DropdownsStatus: FC<DropdownsStatusProps> = observer(
                         onClick={handerIsOpenList}
                     >
                         {!filterStore.selectendRole.length && <div>Пусто</div>}
-                        {listRoles.map((item) => {
+                        {filterStore.selectendRole.map((item) => {
                             return (
                                 <DropdownItem
                                     dropdownTheme={DropdownItemTheme.ITEM_NAME}
                                     key={uuidv4()}
                                 >
-                                    {item.label}
+                                    {item}
                                 </DropdownItem>
                             );
                         })}
