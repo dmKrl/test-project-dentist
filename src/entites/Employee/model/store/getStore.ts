@@ -49,8 +49,31 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                    (this.error =
-                        error.message || 'Ошибка при загрузке сотрудников'),
+                (this.error =
+                    error.message || 'Ошибка при загрузке сотрудников'),
+            );
+        } finally {
+            runInAction(() => (this.loading = false));
+        }
+    }
+
+    async getEmployeesOnPage(page: number) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const responseEmployee = await ky
+                .get(`${mainUrl}/api/v1/users?sort=id&page=${page}`)
+                .json<IEmployeeResponse>();
+            runInAction(() => {
+                this.employees = responseEmployee.data.items;
+                this.pagination = responseEmployee.data.pagination;
+            });
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (error: any) {
+            runInAction(
+                () =>
+                (this.error =
+                    error.message || 'Ошибка при загрузке сотрудников'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -71,8 +94,8 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                    (this.error =
-                        error.message || 'Ошибка при загрузке сотрудников'),
+                (this.error =
+                    error.message || 'Ошибка при загрузке департаментов'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -93,8 +116,8 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                    (this.error =
-                        error.message || 'Ошибка при загрузке сотрудников'),
+                (this.error =
+                    error.message || 'Ошибка при загрузке позиций'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -115,8 +138,8 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                    (this.error =
-                        error.message || 'Ошибка при загрузке сотрудников'),
+                (this.error =
+                    error.message || 'Ошибка при загрузке ролей'),
             );
         } finally {
             runInAction(() => (this.loading = false));

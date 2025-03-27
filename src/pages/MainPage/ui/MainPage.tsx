@@ -8,6 +8,7 @@ import { FAB } from '@/shared/FAB';
 import { useEffect } from 'react';
 import { getEmployeeStore } from '@/entites/Employee';
 import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
+import Pagination from '@/widgets/Pagination/ui/Pagination';
 
 export const MainPage = observer(() => {
     const employees: TypeEmployeeDB[] = getEmployeeStore.employees;
@@ -15,6 +16,10 @@ export const MainPage = observer(() => {
     useEffect(() => {
         getEmployeeStore.getEmployees();
     }, [getEmployeeStore]);
+
+    const hangedOnChangePage = (page: number) => {
+        getEmployeeStore.getEmployeesOnPage(page);
+    };
 
     return (
         <section>
@@ -31,6 +36,10 @@ export const MainPage = observer(() => {
                 ]}
             />
             <Table employees={employees} />
+            <Pagination
+                pagination={getEmployeeStore.pagination}
+                onPageChange={hangedOnChangePage}
+            />
             <FAB />
         </section>
     );
