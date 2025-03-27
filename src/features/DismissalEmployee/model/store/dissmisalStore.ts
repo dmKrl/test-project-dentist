@@ -1,10 +1,8 @@
-import ky from 'ky';
+import { mainUrl } from '@/entites/Employee';
 import { makeAutoObservable, runInAction } from 'mobx';
-import { TypeCreateEmployee } from '../types/typeCreateEmployee';
+import ky from 'ky';
 
-const mainUrl = 'https://api.mock.sb21.ru';
-
-class CreateStore {
+class DismissalStore {
     loading: boolean = false;
     error: string | null = null;
 
@@ -12,20 +10,17 @@ class CreateStore {
         makeAutoObservable(this);
     }
 
-    async createEmployee(newEmployee: TypeCreateEmployee) {
+    async dismissalEmployee(id: string | number | undefined) {
         this.loading = true;
         this.error = null;
         try {
-            await ky
-                .post(`${mainUrl}/api/v1/users`, { json: newEmployee })
-                .json<TypeCreateEmployee>();
-
+            await ky.delete(`${mainUrl}/api/v1/users/${id}`).json();
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (error: any) {
             runInAction(
                 () =>
                     (this.error =
-                        error.message || 'Ошибка при загрузке сотрудников'),
+                        error.message || 'Ошибка при удалении сотрудника'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -33,4 +28,4 @@ class CreateStore {
     }
 }
 
-export const createEmployeeStore = new CreateStore();
+export const dismissalEmployeeStore = new DismissalStore();

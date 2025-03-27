@@ -10,7 +10,6 @@ interface TableProps {
 }
 
 export const Table: FC<TableProps> = ({ employees }) => {
-    console.log(employees);
     return (
         <table className={cls.table}>
             <TableInfo />

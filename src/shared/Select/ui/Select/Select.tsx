@@ -1,11 +1,11 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { SelectTheme } from '../../types/SelectTheme';
 import classNames from 'classnames';
 import ArrowSelect from '@/shared/assets/arrowSelect.svg?react';
 import cls from './Select.module.css';
 
 interface SelectProps {
-    selectLabel?: ReactNode;
+    selectLabel?: string;
     selectTheme: SelectTheme;
 }
 

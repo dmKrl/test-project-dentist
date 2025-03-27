@@ -11,4 +11,5 @@
 
 .inputsBlock {
     gap: 16px;
+    position: relative;
 }

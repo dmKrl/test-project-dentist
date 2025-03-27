@@ -34,7 +34,6 @@ class EditStore {
             const responseEmployee = await ky
                 .get(`${mainUrl}/api/v1/users`)
                 .json<IEmployeeResponse>();
-            console.log(responseEmployee);
             runInAction(() => {
                 this.employees = responseEmployee.data.items;
                 this.pagination = responseEmployee.data.pagination;

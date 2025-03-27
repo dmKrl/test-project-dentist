@@ -25,7 +25,7 @@ class InfoEmployeeStore {
     setChoosenEmployee(employee: TypeEmployeeDB) {
         runInAction(() => {
             this.choosenEmployee = employee;
-        })
+        });
     }
 }
 

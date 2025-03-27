@@ -11,6 +11,9 @@
         ],
         "order/properties-order": [],
         "plugin/rational-order": [false],
-        "keyframes-name-pattern": null
+        "keyframes-name-pattern": null,
+        "no-descending-specificity": null,
+        "declaration-block-single-line-max-declarations": null,
+        "no-duplicate-selectors": null
     }
 }

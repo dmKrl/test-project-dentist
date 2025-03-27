@@ -1,10 +1,15 @@
 import classNames from 'classnames';
-import { FC, InputHTMLAttributes, ReactNode } from 'react';
+import { FC, InputHTMLAttributes, memo, ReactNode } from 'react';
 import { InputTheme } from '../types/InputTheme';
 import cls from './Input.module.css';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    type: 'text' | 'button' | 'checkbox' | 'radio';
+type InputExtends = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'type' | 'onChange'
+>;
+
+interface InputProps extends InputExtends {
+    type: 'text' | 'button' | 'checkbox' | 'radio' | 'select';
     inputTheme: InputTheme;
     placeholder?: string;
     className?: string;
@@ -12,11 +17,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     checked?: boolean | undefined;
     isActiveRadio?: boolean;
     labelInput?: ReactNode;
-    onChange?: () => void;
+    onChange?: (value: string) => void;
     onClick?: () => void;
 }
 
-export const Input: FC<InputProps> = (props) => {
+export const Input: FC<InputProps> = memo((props) => {
     const {
         className,
         value,
@@ -29,6 +34,12 @@ export const Input: FC<InputProps> = (props) => {
         onClick,
     } = props;
 
+    const handlerOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (onChange) {
+            onChange(e.target.value);
+        }
+    };
+
     return (
         <div
             className={classNames(cls.input, {}, [className, cls[inputTheme]])}
@@ -39,7 +50,7 @@ export const Input: FC<InputProps> = (props) => {
                     <input
                         placeholder={placeholder}
                         type={type}
-                        onChange={onChange}
+                        onChange={handlerOnChange}
                         value={value}
                         defaultChecked={checked}
                     />
@@ -48,4 +59,4 @@ export const Input: FC<InputProps> = (props) => {
             }
         </div>
     );
-};
+});

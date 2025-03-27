@@ -2,6 +2,7 @@ import { FC, useCallback } from 'react';
 import { ModalContent } from '@/shared/ModalContent';
 import { deleteEmployeeStore } from '@/features/DeleteEmployee';
 import { infoEmployeeStore } from '@/entites/InfoForm';
+import { dismissalEmployeeStore } from '../../model/store/dissmisalStore';
 
 interface DismissalContentProps {
     onClose: () => void;
@@ -12,7 +13,7 @@ export const DismissalContent: FC<DismissalContentProps> = ({ onClose }) => {
         infoEmployeeStore.choosenEmployee.id;
 
     const handleOnDismissalEmployer = useCallback(() => {
-        deleteEmployeeStore.deleteEmployee(employerId);
+        dismissalEmployeeStore.dismissalEmployee(employerId);
         onClose();
     }, [deleteEmployeeStore]);
     return (

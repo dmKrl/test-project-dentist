@@ -1,7 +1,9 @@
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale'; // для русской локализации
 
-export function formatDate(date: Date | number | string | undefined): string {
+export function formatDate(
+    date: Date | number | string | undefined | null,
+): string {
     if (!date) {
         return '';
     }
