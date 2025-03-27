@@ -35,7 +35,7 @@ export const DropdownsStatus: FC<DropdownsStatusProps> = observer(
                     >
                         <div className={cls.dropdownItems}>
                             {!filterStore.selectendRole.length && (
-                                <div>Пусто</div>
+                                <div>Выберите фильтр</div>
                             )}
                             {filterStore.selectendRole.map((item) => {
                                 return (

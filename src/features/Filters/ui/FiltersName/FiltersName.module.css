@@ -16,7 +16,8 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding-left: 10px;
+    width: 100%;
+    padding: 0 10px;
 }
 
 .filterContainer {
@@ -26,6 +27,7 @@
 
 .filterNameItem {
     padding: 12px 16px;
+    width: 100%;
     border-bottom: 1px solid var(--grayscale-disabled-grey);
 }
 

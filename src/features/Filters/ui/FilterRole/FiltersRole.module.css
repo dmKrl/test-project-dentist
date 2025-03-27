@@ -16,7 +16,8 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding-left: 10px;
+    padding: 0 10px;
+    width: 100%;
 }
 
 .filterContainer {
@@ -27,6 +28,7 @@
 .filterNameItem {
     padding: 12px 16px;
     border-bottom: 1px solid var(--grayscale-disabled-grey);
+    width: 100%;
 }
 
 .filterNameItem:last-child {

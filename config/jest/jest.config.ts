@@ -23,7 +23,7 @@ const config: Config = {
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
         '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
-        '@app/(.*)': '<rootDir>/src/app/$1',
+        '^@/(.*)$': '<rootDir>/src/$1',
         '@shared/(.*)': '<rootDir>/src/shared/$1',
         '@pages/(.*)': '<rootDir>/src/pages/$1',
         '@widgets/(.*)': '<rootDir>/src/widgets/$1',
@@ -35,6 +35,9 @@ const config: Config = {
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
     preset: 'ts-jest',
     setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+    transform: {
+        '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest',
+    },
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,

@@ -8,6 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     type?: 'button' | 'submit';
     disabled?: boolean;
+    dataTestId?: string;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -18,9 +19,11 @@ export const Button: FC<ButtonProps> = (props) => {
         buttonTheme,
         onClick,
         disabled,
+        dataTestId,
     } = props;
     return (
         <button
+            data-testid={dataTestId}
             type={type}
             className={classNames(cls.button, {}, [
                 className,

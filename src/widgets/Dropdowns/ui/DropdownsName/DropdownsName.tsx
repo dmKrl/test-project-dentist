@@ -35,7 +35,9 @@ export const DropdownsName: FC<DropdownsNameProps> = observer(
                     >
                         <div className={cls.dropdownItems}>
                             {!filterStore.selectedName.length && (
-                                <div>Пусто</div>
+                                <p className={cls.dropdownText}>
+                                    Выберите фильтр
+                                </p>
                             )}
                             {filterStore.selectedName.map((item) => {
                                 return (

@@ -22,7 +22,10 @@ export const Sidebar = () => {
     };
 
     return (
-        <section className={classNames(cls.sidebar, mods, [])}>
+        <section
+            data-testid="sidebar"
+            className={classNames(cls.sidebar, mods, [])}
+        >
             <nav className={cls.sidebarContent}>
                 <SidebarLogo isCollapsed={isCollapsed} />
                 <SidebarPersonal isCollapsed={isCollapsed} />
@@ -34,6 +37,7 @@ export const Sidebar = () => {
             </AppLink>
             <Button
                 type="button"
+                dataTestId="sidebar-toggle"
                 onClick={changeIsCollapsed}
                 buttonTheme={ButtonTheme.BUTTON_SIDEBAR}
                 className={cls.collapsedButton}
