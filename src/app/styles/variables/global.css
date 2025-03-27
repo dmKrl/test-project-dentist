@@ -1,5 +1,7 @@
+@import url('./fonts.css');
+
 :root {
-    --font-family-main: consolas, 'Times New Roman', serif;
+    --font-family-main: 'Inter Tight', 'Roboto', 'Gilroy';
     --font-size-s: 14px;
     --font-line-s: 20px;
     --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
@@ -16,6 +18,12 @@
     --sidebar-width: 340px;
     --sidebar-width-collapsed: 100px;
     --modal-z-index: 10;
+
+    /* Gilroy */
+    --font-family-gilroy: 'Gilroy';
+    --font-size-g: 48px;
+    --font-line-g: 48px;
+    --font-g: var(--font-size-g) / var(--font-line-g) var(--font-family-gilroy);
 
     /* Colors */
     --bg-color: #fff;

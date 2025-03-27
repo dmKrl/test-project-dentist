@@ -5,9 +5,9 @@ import { DropdownItemTheme } from '@/shared/DropdownItem/types/ItemTheme';
 import { Position } from '@/entites/Employee/model/types/infoSchema';
 import { FiltersRole, filterStore } from '@/features/Filters';
 import { v4 as uuidv4 } from 'uuid';
-import cls from './DropdownsStatus.module.css';
 import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
+import cls from '../Dropdowns/Dropdowns.module.css';
 
 interface DropdownsStatusProps {
     className: string;
@@ -30,20 +30,26 @@ export const DropdownsStatus: FC<DropdownsStatusProps> = observer(
                     ])}
                 >
                     <div
-                        className={cls.dropdownsStatus}
+                        className={cls.dropdownsBlock}
                         onClick={handerIsOpenList}
                     >
-                        {!filterStore.selectendRole.length && <div>Пусто</div>}
-                        {filterStore.selectendRole.map((item) => {
-                            return (
-                                <DropdownItem
-                                    dropdownTheme={DropdownItemTheme.ITEM_NAME}
-                                    key={uuidv4()}
-                                >
-                                    {item}
-                                </DropdownItem>
-                            );
-                        })}
+                        <div className={cls.dropdownItems}>
+                            {!filterStore.selectendRole.length && (
+                                <div>Пусто</div>
+                            )}
+                            {filterStore.selectendRole.map((item) => {
+                                return (
+                                    <DropdownItem
+                                        dropdownTheme={
+                                            DropdownItemTheme.ITEM_NAME
+                                        }
+                                        key={uuidv4()}
+                                    >
+                                        {item}
+                                    </DropdownItem>
+                                );
+                            })}
+                        </div>
                         <div className={cls.dropdownsContent}>
                             <span className={cls.ellipsis}>...</span>
                             <div className={cls.quantity}>

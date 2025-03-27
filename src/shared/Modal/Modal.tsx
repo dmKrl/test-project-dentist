@@ -2,6 +2,9 @@ import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.css';
+import { Button } from '../Button';
+import { ButtonTheme } from '../Button/types/ButtonTheme';
+import CloseModal from '../assets/closeModal.svg?react';
 
 interface ModalProps {
     children: ReactNode;
@@ -59,6 +62,13 @@ export const Modal: FC<ModalProps> = (props) => {
             >
                 <div className={cls.modal}>
                     <div className={cls.modalContent} onClick={onContentClick}>
+                        <Button
+                            onClick={onClose}
+                            className={cls.modalClose}
+                            buttonTheme={ButtonTheme.CLEAR}
+                        >
+                            <CloseModal />
+                        </Button>
                         {children}
                     </div>
                 </div>

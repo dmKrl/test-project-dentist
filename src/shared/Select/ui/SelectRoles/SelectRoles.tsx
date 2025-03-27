@@ -3,7 +3,7 @@ import { SelectTheme } from '../../types/SelectTheme';
 import classNames from 'classnames';
 import ArrowSelect from '@/shared/assets/arrowSelect.svg?react';
 import { Position } from '@/entites/Employee/model/types/infoSchema';
-import cls from './SelectRoles.module.css';
+import cls from '../Select/Select.module.css';
 
 interface SelectRoleProps {
     selectLabel?: string;

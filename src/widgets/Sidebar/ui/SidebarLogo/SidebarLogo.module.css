@@ -16,10 +16,8 @@
 
 .logoTitle {
     color: var(--primary-text-color);
-    font-size: 48px;
-    font-style: normal;
+    font: var(--font-g);
     font-weight: 800;
-    line-height: 48px;
 }
 
 .logoNaming {

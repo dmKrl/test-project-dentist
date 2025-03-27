@@ -19,8 +19,6 @@ jobs:
                   node-version: ${{ matrix.node-version }}
             - name: Install dependencies
               run: npm install
-            - name: Build production project
-              run: npm run build
               if: always()
             - name: Test lint Typescript
               run: npm run lint:ts

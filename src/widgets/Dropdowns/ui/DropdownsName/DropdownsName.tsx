@@ -4,10 +4,10 @@ import { DropdownItem } from '@/shared/DropdownItem';
 import { DropdownItemTheme } from '@/shared/DropdownItem/types/ItemTheme';
 import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
 import { FiltersName, filterStore } from '@/features/Filters';
+import { observer } from 'mobx-react-lite';
 import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
-import cls from './DropdownsName.module.css';
-import { observer } from 'mobx-react-lite';
+import cls from '../Dropdowns/Dropdowns.module.css';
 
 interface DropdownsNameProps {
     className: string;
@@ -30,7 +30,7 @@ export const DropdownsName: FC<DropdownsNameProps> = observer(
                     ])}
                 >
                     <div
-                        className={cls.dropdownsName}
+                        className={cls.dropdownsBlock}
                         onClick={handerIsOpenList}
                     >
                         <div className={cls.dropdownItems}>

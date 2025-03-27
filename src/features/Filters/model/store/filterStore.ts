@@ -5,6 +5,8 @@ class FilterStore {
     selectedName: string[] = [];
     selectendRole: string[] = [];
     selectIsAll: string = '';
+    isOpenFilterRole: boolean = false;
+    isOpenFilterName: boolean = false;
 
     constructor() {
         makeAutoObservable(this);
@@ -43,6 +45,8 @@ class FilterStore {
             this.selectendRole = [...this.selectendRole, role];
         }
     };
+
+    changeIsOpenFilterRole = () => {};
 }
 
 export const filterStore = new FilterStore();

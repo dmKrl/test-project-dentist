@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { Input, InputTheme } from '@/shared/Input';
 import { Button } from '@/shared/Button';
 import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
-import CloseModal from '../../assets/closeModal.svg?react';
 import cls from './ChangePasswordForm.module.css';
 
 interface ChangePasswordFormProps {
@@ -16,9 +15,6 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = (props) => {
 
     return (
         <div className={classNames(cls.changePasswordForm, {}, [className])}>
-            <Button buttonTheme={ButtonTheme.CLEAR} onClick={onClose}>
-                <CloseModal />
-            </Button>
             <h2>Изменение пароля</h2>
             <div className={cls.ChangePasswordInputsBlock}>
                 <Input

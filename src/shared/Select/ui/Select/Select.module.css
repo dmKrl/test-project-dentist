@@ -21,3 +21,48 @@
 .selectHeader {
     padding: 16px;
 }
+
+.select {
+    border-radius: 16px;
+    background: var(--primary-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+    gap: 8px;
+    max-width: 494px;
+    width: 565px;
+}
+
+.selectContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+}
+
+.selectContainer span {
+    font: var(--font-m);
+    color: var(--grayscale-dark-grey);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+}
+
+.select label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font: var(--font-m);
+    color: var(--grayscale-grey);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.selectHeader {
+    padding: 16px;
+}

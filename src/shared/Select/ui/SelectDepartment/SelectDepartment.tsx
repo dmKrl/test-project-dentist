@@ -3,13 +3,13 @@ import { SelectTheme } from '../../types/SelectTheme';
 import classNames from 'classnames';
 import ArrowSelect from '@/shared/assets/arrowSelect.svg?react';
 import { Department } from '@/entites/Employee/model/types/infoSchema';
-import cls from './SelectDepartment.module.css';
+import cls from '../Select/Select.module.css';
 
 interface SelectDepartmentProps {
     selectLabel?: string;
     selectTheme: SelectTheme;
     options: Department[];
-    value: string;
+    value: string | undefined;
     onChange: (value: string) => void;
 }
 

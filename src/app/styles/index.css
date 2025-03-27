@@ -1,6 +1,7 @@
 /* stylelint-disable property-no-vendor-prefix */
 @import url('./reset.css');
 @import url('./variables/global.css');
+@import url('./variables//fonts.css');
 
 .app {
     display: flex;
