@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import AboutIcon from '../../assets/workspace/about.svg?react';
-import ArrowsCollapsed from '../../assets/button/arrowsCollapsed.svg?react';
+import ArrowCollapsed from '../../assets/button/arrowCollapsed.svg?react';
 import { SidebarPersonal } from '../SidebarPersonal/SidebarPersonal';
 import { SidebarWorkspace } from '../SidebarWorkspace/SidebarWorkspace';
 import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
@@ -38,7 +38,7 @@ export const Sidebar = () => {
                 buttonTheme={ButtonTheme.BUTTON_SIDEBAR}
                 className={cls.collapsedButton}
             >
-                <ArrowsCollapsed />
+                <ArrowCollapsed />
             </Button>
         </section>
     );

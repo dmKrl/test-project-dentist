@@ -23,6 +23,7 @@ interface IEmployeeResponse {
 
 class EmployeeStore {
     employees: TypeEmployeeDB[] = [];
+    filterEmpl: TypeEmployeeDB[] = this.employees;
     departments: Department[] = [];
     roles: Role[] = [];
     positions: Position[] = [];
@@ -144,6 +145,12 @@ class EmployeeStore {
         } finally {
             runInAction(() => (this.loading = false));
         }
+    }
+
+    filteredToDismissed(action: string | undefined) {
+        runInAction(() => {
+            this.filterEmpl = this.employees.filter((emp) => { return action === 'Уволен' ? emp.status?.label === action : emp })
+        })
     }
 }
 

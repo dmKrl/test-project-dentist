@@ -1,17 +1,35 @@
 import { observer } from 'mobx-react-lite';
 import { Title } from '@/shared/Title/ui/Title';
 import { Tabs } from '@/widgets/Tabs';
-import { Filters } from '@/widgets/Filters';
 import { Dropdowns } from '@/widgets/Dropdowns';
 import { Table } from '@/widgets/Table';
 import { FAB } from '@/shared/FAB';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { getEmployeeStore } from '@/entites/Employee';
 import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
 import Pagination from '@/widgets/Pagination/ui/Pagination';
+import { Filters, filterStore } from '@/features/Filters';
 
 export const MainPage = observer(() => {
     const employees: TypeEmployeeDB[] = getEmployeeStore.employees;
+
+    console.log(filterStore.selectedCatogories);
+
+    const filteredEmployees = useMemo(() => {
+        return employees.filter((employee) => {
+            const matchesStatus =
+                filterStore.selectedCatogories.length === 0 ||
+                filterStore.selectedCatogories.includes(
+                    employee.status?.label ?? '',
+                );
+
+            const matchesName =
+                filterStore.selectedName.length === 0 ||
+                filterStore.selectedName.includes(employee.name);
+
+            return matchesStatus && matchesName;
+        });
+    }, [employees, filterStore.selectedCatogories]);
 
     useEffect(() => {
         getEmployeeStore.getEmployees();
@@ -28,14 +46,8 @@ export const MainPage = observer(() => {
             <div>
                 <Dropdowns />
             </div>
-            <Filters
-                categories={[
-                    'Выбрать всех',
-                    'Отображать уволенных',
-                    'Отображать заблокированных',
-                ]}
-            />
-            <Table employees={employees} />
+            <Filters />
+            <Table employees={filteredEmployees} />
             <Pagination
                 pagination={getEmployeeStore.pagination}
                 onPageChange={hangedOnChangePage}

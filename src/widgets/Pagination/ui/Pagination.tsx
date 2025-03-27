@@ -3,8 +3,8 @@ import { DataPagination } from '@/entites/Employee/model/types/employee';
 import { Button } from '@/shared/Button';
 import ArrowPrev from '../assets/arrowPrev.svg?react';
 import ArrowNext from '../assets/arrowNext.svg?react';
-import cls from './Pagination.module.css';
 import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
+import cls from './Pagination.module.css';
 
 interface PaginationProps {
     pagination: DataPagination | null;
@@ -17,23 +17,20 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
     const pageCurrent = pagination?.page ?? 1;
     const total = pagination?.total ?? 1;
-    const maxPagesToShow = 3; // Сколько страниц показывать в начале и конце
+    const maxPagesToShow = 3; 
     const showEllipsis = total > maxPagesToShow + 1;
 
     const getPageNumbers = () => {
         const pages = [];
 
-        // Показываем первые maxPagesToShow страниц
         for (let i = 1; i <= Math.min(maxPagesToShow, total); i++) {
             pages.push(i);
         }
 
-        // Если страниц больше, чем maxPagesToShow + 1, добавляем многоточие
         if (showEllipsis) {
-            pages.push(null); // Используем null как индикатор многоточия
+            pages.push(null);
         }
 
-        // Всегда показываем последнюю страницу
         if (total > maxPagesToShow) {
             pages.push(total);
         }

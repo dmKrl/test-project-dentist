@@ -2,3 +2,17 @@
     display: flex;
     flex-direction: column;
 }
+
+.buttonDrop {
+    font: var(--font-m);
+    justify-content: flex-start;
+    color: var(--grayscale-grey);
+    font-feature-settings:
+        'liga' off,
+        'clig' off;
+    padding-left: 16px;
+}
+
+.collapsed .buttonDrop {
+    padding-left: 0;
+}

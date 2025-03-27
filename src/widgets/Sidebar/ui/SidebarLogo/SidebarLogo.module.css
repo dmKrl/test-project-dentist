@@ -1,5 +1,7 @@
 .logoContainer {
     display: flex;
+    justify-content: flex-start;
+    padding-left: 16px;
     gap: 16px;
 }
 
@@ -29,4 +31,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
+}
+
+.collapsed .logoContainer {
+    padding-left: 0;
 }
