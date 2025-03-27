@@ -50,8 +50,8 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                (this.error =
-                    error.message || 'Ошибка при загрузке сотрудников'),
+                    (this.error =
+                        error.message || 'Ошибка при загрузке сотрудников'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -73,8 +73,8 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                (this.error =
-                    error.message || 'Ошибка при загрузке сотрудников'),
+                    (this.error =
+                        error.message || 'Ошибка при загрузке сотрудников'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -95,8 +95,8 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                (this.error =
-                    error.message || 'Ошибка при загрузке департаментов'),
+                    (this.error =
+                        error.message || 'Ошибка при загрузке департаментов'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -117,8 +117,8 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                (this.error =
-                    error.message || 'Ошибка при загрузке позиций'),
+                    (this.error =
+                        error.message || 'Ошибка при загрузке позиций'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -139,8 +139,7 @@ class EmployeeStore {
         } catch (error: any) {
             runInAction(
                 () =>
-                (this.error =
-                    error.message || 'Ошибка при загрузке ролей'),
+                    (this.error = error.message || 'Ошибка при загрузке ролей'),
             );
         } finally {
             runInAction(() => (this.loading = false));
@@ -149,8 +148,10 @@ class EmployeeStore {
 
     filteredToDismissed(action: string | undefined) {
         runInAction(() => {
-            this.filterEmpl = this.employees.filter((emp) => { return action === 'Уволен' ? emp.status?.label === action : emp })
-        })
+            this.filterEmpl = this.employees.filter((emp) => {
+                return action === 'Уволен' ? emp.status?.label === action : emp;
+            });
+        });
     }
 }
 

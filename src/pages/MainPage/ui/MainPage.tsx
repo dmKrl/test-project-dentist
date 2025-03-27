@@ -8,7 +8,7 @@ import { useEffect, useMemo } from 'react';
 import { getEmployeeStore } from '@/entites/Employee';
 import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
 import Pagination from '@/widgets/Pagination/ui/Pagination';
-import { Filters, filterStore } from '@/features/Filters';
+import { FiltersDismissal, filterStore } from '@/features/Filters';
 
 export const MainPage = observer(() => {
     const employees: TypeEmployeeDB[] = getEmployeeStore.employees;
@@ -25,11 +25,11 @@ export const MainPage = observer(() => {
 
             const matchesName =
                 filterStore.selectedName.length === 0 ||
-                filterStore.selectedName.includes(employee.name);
+                filterStore.selectedName.includes(employee.surname);
 
             return matchesStatus && matchesName;
         });
-    }, [employees, filterStore.selectedCatogories]);
+    }, [employees, filterStore.selectedCatogories, filterStore.selectedName]);
 
     useEffect(() => {
         getEmployeeStore.getEmployees();
@@ -44,9 +44,9 @@ export const MainPage = observer(() => {
             <Tabs />
             <Title buttonMounted>Штатное расписание</Title>
             <div>
-                <Dropdowns />
+                <Dropdowns filteredEmployees={employees} />
             </div>
-            <Filters />
+            <FiltersDismissal />
             <Table employees={filteredEmployees} />
             <Pagination
                 pagination={getEmployeeStore.pagination}

@@ -6,6 +6,7 @@ interface FilterItemProps {
     categoryLabel: string;
     selectedCategories: string[];
     handleCheckboxChange: (category: string) => void;
+    className?: string;
 }
 
 export const FilterItem: FC<FilterItemProps> = ({
@@ -13,6 +14,7 @@ export const FilterItem: FC<FilterItemProps> = ({
     categoryLabel,
     handleCheckboxChange,
     selectedCategories,
+    className,
 }) => {
     return (
         <Input
@@ -22,6 +24,7 @@ export const FilterItem: FC<FilterItemProps> = ({
             inputTheme={InputTheme.CHECKBOX_INPUT}
             checked={selectedCategories.includes(category)}
             onChange={() => handleCheckboxChange(category)}
+            className={className}
         />
     );
 };

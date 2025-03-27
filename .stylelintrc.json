@@ -14,6 +14,7 @@
         "keyframes-name-pattern": null,
         "no-descending-specificity": null,
         "declaration-block-single-line-max-declarations": null,
-        "no-duplicate-selectors": null
+        "no-duplicate-selectors": null,
+        "declaration-block-no-duplicate-properties": null
     }
 }

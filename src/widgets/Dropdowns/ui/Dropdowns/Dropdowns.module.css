@@ -4,8 +4,5 @@
 }
 
 .dropdownsContainer {
-    border-radius: 16px;
-    background: var(--primary-bg-color);
-    padding: 16px;
-    min-width: 706px;
+    width: 706px;
 }

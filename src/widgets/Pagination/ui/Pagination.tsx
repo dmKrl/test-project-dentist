@@ -17,7 +17,7 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
     const pageCurrent = pagination?.page ?? 1;
     const total = pagination?.total ?? 1;
-    const maxPagesToShow = 3; 
+    const maxPagesToShow = 3;
     const showEllipsis = total > maxPagesToShow + 1;
 
     const getPageNumbers = () => {

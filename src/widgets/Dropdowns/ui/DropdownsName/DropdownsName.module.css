@@ -1,7 +1,11 @@
 .dropdownsName {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 8px;
+    border-radius: 16px;
+    background: var(--primary-bg-color);
+    padding: 16px;
 }
 
 .quantity {
@@ -14,6 +18,11 @@
     padding: 6px 12px;
 }
 
+.dropdownsContent {
+    display: flex;
+    gap: 8px;
+}
+
 .ellipsis {
     font: var(--font-s);
     color: var(--grayscale-grey);
@@ -23,4 +32,14 @@
     text-overflow: ellipsis;
     display: flex;
     align-items: center;
+}
+
+.dropdownsNameContainer {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdownItems {
+    display: flex;
+    gap: 10px;
 }

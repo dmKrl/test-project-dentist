@@ -11,7 +11,9 @@ class FilterStore {
 
     toggleCategory = (category: string) => {
         if (this.selectedCatogories.includes(category)) {
-            this.selectedCatogories = this.selectedCatogories.filter((c) => c !== category);
+            this.selectedCatogories = this.selectedCatogories.filter(
+                (c) => c !== category,
+            );
         } else {
             this.selectedCatogories = [...this.selectedCatogories, category];
         }
