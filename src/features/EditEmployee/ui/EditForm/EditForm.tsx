@@ -3,16 +3,15 @@ import { Input, InputTheme } from '@/shared/Input';
 import { Button } from '@/shared/Button';
 import { ButtonTheme } from '@/shared/Button/types/ButtonTheme';
 import { ChangePasswordModal } from '@/features/ChangePassword';
-import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
 import { formatDate } from '@/entites/Employee/model/lib/FormatDate';
 import Calendar from '../../assets/calendar.svg?react';
+import { getEmployeeStore, TypeEmployeeDB } from '@/entites/Employee';
 import {
     SelectDepartment,
     SelectPosition,
     SelectRole,
     SelectTheme,
 } from '@/shared/Select';
-import { getEmployeeStore } from '@/entites/Employee';
 import DatePicker from 'react-datepicker';
 import cls from './EditForm.module.css';
 

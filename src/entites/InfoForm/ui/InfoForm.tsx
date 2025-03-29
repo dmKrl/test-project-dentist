@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import cls from './InfoForm.module.css';
 import { Input, InputTheme } from '@/shared/Input';
-import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
 import { formatDate } from '@/entites/Employee/model/lib/FormatDate';
+import { TypeEmployeeDB } from '@/entites/Employee';
 
 interface InfoFormProps {
     className?: string;

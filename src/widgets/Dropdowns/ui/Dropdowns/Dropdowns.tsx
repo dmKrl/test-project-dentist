@@ -1,10 +1,9 @@
+import { FC } from 'react';
 import { DropdownsName } from '../DropdownsName/DropdownsName';
 import { DropdownsStatus } from '../DropdownsStatus/DropdownsStatus';
-import { FC } from 'react';
-import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
-import cls from './Dropdowns.module.css';
-import { getEmployeeStore } from '@/entites/Employee';
+import { getEmployeeStore, TypeEmployeeDB } from '@/entites/Employee';
 import { observer } from 'mobx-react-lite';
+import cls from './Dropdowns.module.css';
 
 interface DropdownsProps {
     filteredEmployees: TypeEmployeeDB[];

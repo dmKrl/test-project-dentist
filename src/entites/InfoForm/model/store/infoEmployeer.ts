@@ -1,4 +1,4 @@
-import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
+import { TypeEmployeeDB } from '@/entites/Employee';
 import { makeAutoObservable, runInAction } from 'mobx';
 
 class InfoEmployeeStore {

@@ -1,17 +1,3 @@
-export type TypeEmployee = {
-    id: string | number | undefined;
-    fullName: string;
-    phone: string;
-    mail: string;
-    password: string;
-    jobPosition: string;
-    role: string;
-    status: string;
-    pap: string | boolean;
-    dateJoin: string;
-    dateQuit: string | null;
-};
-
 interface Department {
     value: string;
     label: string;
@@ -41,10 +27,6 @@ export interface DataPagination {
     last_page: number;
 }
 
-export interface EmployeeSchema {
-    dataEmployee: TypeEmployee[];
-}
-
 export type TypeEmployeeDB = {
     id: string | number | undefined;
     name: string;
@@ -60,3 +42,7 @@ export type TypeEmployeeDB = {
     hired_at: number;
     fired_at: number;
 };
+
+export interface EmployeeSchema {
+    dataEmployee: TypeEmployeeDB[];
+}

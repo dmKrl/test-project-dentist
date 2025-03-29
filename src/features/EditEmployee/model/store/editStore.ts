@@ -1,7 +1,4 @@
-import {
-    DataPagination,
-    TypeEmployeeDB,
-} from '@/entites/Employee/model/types/employee';
+import { DataPagination, TypeEmployeeDB } from '@/entites/Employee';
 import ky from 'ky';
 import { makeAutoObservable, runInAction } from 'mobx';
 

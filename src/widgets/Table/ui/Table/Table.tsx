@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import cls from './Table.module.css';
 import { TableInfo } from '../TableInfo/TableInfo';
-import { Employee } from '@/entites/Employee';
-import { TypeEmployeeDB } from '@/entites/Employee/model/types/employee';
+import { Employee, TypeEmployeeDB } from '@/entites/Employee';
 
 interface TableProps {
     className?: string;
